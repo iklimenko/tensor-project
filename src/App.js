@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo } from './styled/styles';
+
+import logo from './images/logo.png'
+import image from './images/image.png'
+
+const TEXT = "Это страница школы Тензор. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.";
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <MainContainer>
+    <Container>
+      <LogoContainer>
+        <img height="74px" width="74px" src={logo} alt="Логотип тензора"></img>
+        <TextLogo>TENSOR SCHOOL</TextLogo>
+      </LogoContainer>
+      <InfoContainer>
+        <MainImage>
+          <img height="251px" width="294px" src={image} alt="Ведущее изображение"></img>
+        </MainImage>
+        <Paragraph>{TEXT}</Paragraph>
+      </InfoContainer>
+    </Container>
+  </MainContainer>
+  
   );
 }
 
