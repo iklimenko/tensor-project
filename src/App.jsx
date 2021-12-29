@@ -1,4 +1,4 @@
-import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo } from './styled/styles';
+import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo } from './styled/AppStyles';
 
 import logo from './images/logo.png'
 import image from './images/image.png'
@@ -16,7 +16,7 @@ function App() {
       </LogoContainer>
       <InfoContainer>
         <MainImage>
-          <img height="251px" width="294px" src={image} alt="Ведущее изображение"></img>
+          <img height="251px" width="294px" src={image} alt="Центральное изображение"></img>
         </MainImage>
         <Paragraph>{TEXT}</Paragraph>
       </InfoContainer>
