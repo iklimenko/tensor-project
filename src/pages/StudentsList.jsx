@@ -1,6 +1,6 @@
-import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, Logo } from './styled/ListStyles';
+import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, Logo } from '../styled/ListStyles';
 
-import logo from './images/logo.png'
+import logo from './../images/logo.png'
 
 const students = [{
     name: "Мария Иванова",
@@ -21,7 +21,7 @@ const students = [{
     city: 'Ярославль'
 }]
 
-function StudentsList() {
+const StudentsList = () => {
   
   return (
   <MainContainer>

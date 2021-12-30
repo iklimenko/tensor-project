@@ -1,29 +1,19 @@
-import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo } from './styled/AppStyles';
+import { useRoutes } from 'react-router-dom';
+import routes from './router';
+import StartPage from './pages/StartPage'
+import StudentsList from './pages/StudentsList'
 
-import logo from './images/logo.png'
-import image from './images/image.png'
 
-const TEXT = "Это страница школы Тензор. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.";
 
-function App() {
-  
+const App = () => {
+
+  const content = useRoutes(routes);
+
   return (
-  <MainContainer>
-    <Container>
-      <LogoContainer>
-        <img height="74px" width="74px" src={logo} alt="Логотип тензора"></img>
-        <TextLogo>TENSOR SCHOOL</TextLogo>
-      </LogoContainer>
-      <InfoContainer>
-        <MainImage>
-          <img height="251px" width="294px" src={image} alt="Центральное изображение"></img>
-        </MainImage>
-        <Paragraph>{TEXT}</Paragraph>
-      </InfoContainer>
-    </Container>
-  </MainContainer>
-  
-  );
+      {content}
+    //   <StudentsList />
+    );
 }
 
 export default App;
+
