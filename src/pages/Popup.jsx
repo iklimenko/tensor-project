@@ -6,6 +6,10 @@ import logo from './../images/logo.png'
 
 const Popup = (props) => {
 
+  const student = props.student
+  const [curStudent, setCurStudent] = useState(student)
+
+  
   
   return (
     <MainContainer>
@@ -22,15 +26,27 @@ const Popup = (props) => {
                     <StudentInfo>
                         <InfoCell>
                             <Label>Имя:</Label>
-                            <Input type="text" />
+                            <Input 
+                                type="text" 
+                                defaultValue={student.name}
+                                onChange={e => { setCurStudent({...curStudent, name: e.target.value})} }
+                            />
                         </InfoCell>
                         <InfoCell>
                             <Label>Город:</Label>
-                            <Input type="text" />
+                            <Input 
+                                type="text" 
+                                defaultValue={student.city}
+                                onChange={e => { setCurStudent({...curStudent, city: e.target.value})} }
+                            />
                         </InfoCell>
                         <InfoCell>
                             <Label>ВУЗ:</Label>
-                            <Input type="text" />
+                            <Input 
+                                type="text" 
+                                defaultValue={student.university}
+                                onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
+                            />
                         </InfoCell>
                         <InfoCell>
                             <Label>Курс:</Label>
@@ -38,6 +54,8 @@ const Popup = (props) => {
                                 type="number"
                                 min={1}
                                 max={4}
+                                defaultValue={student.course}
+                                onChange={e => { setCurStudent({...curStudent, course: e.target.value})} }
                             />
                         </InfoCell>
                     </StudentInfo> 
@@ -50,11 +68,15 @@ const Popup = (props) => {
                 </InfoCell>
                 <ButtonContainer>
                     <Button 
-                    style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}>Сохранить</Button>
+                        style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}
+                        onClick={(event) => {
+                            props.onSave(curStudent)
+                            props.closePopup()
+                        }}
+                    >Сохранить</Button>
                     <Button 
-                    style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}
-                    onClick={(event) => {
-                        props.closePopup();}
+                        style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}
+                        onClick={(event) => { props.closePopup(); }
                     }>
                         Отмена
                     </Button>

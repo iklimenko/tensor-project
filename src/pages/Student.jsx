@@ -8,9 +8,6 @@ const Student = (props) => {
     const [student, setStudent] = useState({})
 
     useEffect(() => {setStudent(props.opt)}, [])
-
-
-    console.log(student)
     
     return (<StudentContainer onClick={props.onClick} key = {student._id}>
                 <Avatar>
