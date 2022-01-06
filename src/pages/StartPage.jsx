@@ -6,10 +6,6 @@ import image from './../images/image.png'
 
 const TEXT = "Это страница школы Тензор. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.";
 
-const onChange = () => {
-
-}
-
 const StartPage = () => {
   
   return (
@@ -26,7 +22,6 @@ const StartPage = () => {
         <Paragraph>{TEXT}</Paragraph>
       </InfoContainer>
     </Container>
-    <button onClick={e => onChange()}></button>
   </MainContainer>
   
   );

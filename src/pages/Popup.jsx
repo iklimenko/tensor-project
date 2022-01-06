@@ -1,9 +1,11 @@
 import { BackgroundContainer, InfoContainer, MainContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer } from '../styled/PopupStyles';
+import { useState } from 'react';
 
 import logo from './../images/logo.png'
 
 
-const Popup = () => {
+const Popup = (props) => {
+
   
   return (
     <MainContainer>
@@ -47,8 +49,16 @@ const Popup = () => {
                     />
                 </InfoCell>
                 <ButtonContainer>
-                    <Button style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}>Сохранить</Button>
-                    <Button style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}>Отмена</Button>
+                    <Button 
+                    style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}>Сохранить</Button>
+                    <Button 
+                    style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}
+                    onClick={(event) => {
+                        props.closePopup();}
+                    }>
+                        Отмена
+                    </Button>
+                    
                 </ButtonContainer>
             </InfoContainer>
         </BackgroundContainer>
