@@ -11,18 +11,18 @@ const Student = (props) => {
     
     return (<StudentContainer onClick={props.onClick} key = {student._id}>
                 <Avatar>
-                <img height="80px" width="80px" src={logo} alt="Логотип тензора"></img>
+                    <img height="80px" width="80px" src={logo} alt="Логотип тензора"></img>
                 </Avatar>
                 <StudInfoContainer>
-                <PrimaryInfo>{student.name}</PrimaryInfo>
-                <SecondaryInfo>
-                    <University>
-                    {`${student.university} ${student.course} курс`}
-                    </University>
-                    <City>
-                    {`г. ${student.city}`}
-                    </City>
-                </SecondaryInfo>
+                    <PrimaryInfo>{student.name}</PrimaryInfo>
+                    <SecondaryInfo>
+                        <University>
+                        {`${student.university} ${student.course} курс`}
+                        </University>
+                        <City>
+                        {`г. ${student.city}`}
+                        </City>
+                    </SecondaryInfo>
                 </StudInfoContainer>
             </StudentContainer>)
     

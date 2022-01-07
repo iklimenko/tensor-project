@@ -14,7 +14,7 @@ export const BackgroundContainer = styled.div`
     background: rgb(0 0 0 / 0.35);
 `
 export const InfoContainer = styled.div`
-    height: 360px;
+    height: 460px;
     max-width: 600px;
     background-color: white;
     margin: auto;

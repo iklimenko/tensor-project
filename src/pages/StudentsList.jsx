@@ -11,21 +11,30 @@ const students = [{
     name: "Мария Иванова",
     university: 'УГАТУ',
     course: 2,
-    city: 'Уфа'
+    city: 'Уфа',
+    description: 'Good student',
+    mail: 'example@mail.ru',
+    phoneNumber: 89001002030
 }, 
 {
     _id: 4356,
     name: "Анна Волкова",
     university: 'СибГУТИ',
     course: 2,
-    city: 'Новосибирск'
+    city: 'Новосибирск',
+    description: 'Good student',
+    mail: 'example@mail.ru',
+    phoneNumber: 89001002030
 }, 
 {   
     _id: 123234, 
     name: "Иван Клименко",
     university: 'ЯрГУ',
     course: 4,
-    city: 'Ярославль'
+    city: 'Ярославль',
+    description: 'Good student',
+    mail: 'example@mail.ru',
+    phoneNumber: 89001002030
 }]
 
 const StudentsList = () => {
@@ -44,14 +53,20 @@ const StudentsList = () => {
     students.push({...student, _id: rand_id});
     console.log(students)
   }
+
+  const deleteStudent = (student) => {
+    const position = students.findIndex(item => student._id === item._id)
+    students.splice(position, 1);
+  }
   
   return (
     <div>
       { isPopup ? (<Popup 
-                      closePopup={() => { setPopup(false); }} 
+                      closePopup={() => { setPopup(false) }} 
                       student={curStudent} 
                       onEdit={(student) => { changeStudent(student) }}
                       onAdd={(student) => { addStudent(student) }}
+                      onDelete={(student) => { deleteStudent(student) }}
                       isNew={isNew}
                   />) : (<></>) }
       <MainContainer>
@@ -79,6 +94,7 @@ const StudentsList = () => {
             onClick={e => {
               setPopup(true)
               setIsNew(true)
+              setCurStudent({})
             }}
           >
           Добавить студента
