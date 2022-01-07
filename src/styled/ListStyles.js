@@ -118,4 +118,14 @@ export const City = styled.div`
     line-height: 17px;
     color: #7A91B5;
 `
-
+export const AddingUser = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    width: 390px;
+    font-size: 20px;
+    border: dashed 1px #5465ff;
+    border-radius: 5px;
+    color: #5465ff
+`

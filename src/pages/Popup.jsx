@@ -1,5 +1,5 @@
 import { BackgroundContainer, InfoContainer, MainContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer } from '../styled/PopupStyles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import logo from './../images/logo.png'
 
@@ -7,10 +7,14 @@ import logo from './../images/logo.png'
 const Popup = (props) => {
 
   const student = props.student
-  const [curStudent, setCurStudent] = useState(student)
+  const [curStudent, setCurStudent] = useState()
 
-  
-  
+  //Допилить логику пустого добавления
+
+  useEffect(() => {
+    props.isNew ? setCurStudent({}) : setCurStudent(student) 
+  }, [])
+
   return (
     <MainContainer>
         <BackgroundContainer>
@@ -67,13 +71,28 @@ const Popup = (props) => {
                     />
                 </InfoCell>
                 <ButtonContainer>
-                    <Button 
+                    {props.isNew ? (
+                        <Button 
                         style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}
                         onClick={(event) => {
-                            props.onSave(curStudent)
+                            props.onAdd(curStudent)
                             props.closePopup()
                         }}
-                    >Сохранить</Button>
+                        >
+                            Добавить
+                        </Button>
+                    ) : (
+                        <Button 
+                        style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}
+                        onClick={(event) => {
+                            props.onEdit(curStudent)
+                            props.closePopup()
+                        }}
+                        >
+                            Сохранить
+                        </Button>
+                    )}
+                    
                     <Button 
                         style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}
                         onClick={(event) => { props.closePopup(); }
