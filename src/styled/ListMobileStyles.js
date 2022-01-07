@@ -1,10 +1,39 @@
 import styled from 'styled-components';
 
+export const Header = styled.div`
+    height: 80px;
+    width: 100%;
+    margin-bottom: 12px;
+`
+export const HeaderUp = styled.div`
+    height: 24px;
+    width: 100%;
+    background-color: #364968;
+    border-radius: 6px 6px 0 0;
+`
+export const HeaderDown = styled.div`
+    height: 56px;
+    width: 100%;
+    background-color: #364968;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: SF UI Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+`
+
 export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
+    height: 732px;
 `
 
 export const TextLogo = styled.div`
@@ -31,7 +60,6 @@ export const LogoContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* padding: 64px 10px 80px; */
     width: 800px;
     height: 185px;
 `
@@ -65,44 +93,38 @@ export const ListContainer = styled.div`
     flex-direction: column;
 `
 export const StudentContainer = styled.div`
-    height: 112px;
-    width: 392px;
+    height: 72px;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
-    border-radius: 5px;
-    transition: background-color 0.5s linear;
-    &:hover {
-        background-color: #fcc897;
-        border-radius: 5px;
-        transition: background-color 0.1s linear;
-    }
 `
 export const Avatar = styled.div`
-    height: 80px;
-    width: 80px;
-    margin: 0px 10px;
+    height: 56px;
+    width: 56px;
 `
 
 export const StudInfoContainer = styled.div`
     display: flex;
     flex-direction: column;
-    height: 80px;
-    width: 250px;
+    height: 56px;
+    width: 217px;
 `
 export const PrimaryInfo = styled.div`
     font-family: SF UI Display;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 4px 0px;
 `
 export const SecondaryInfo = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 0px 0px 4px 0px;
 `
 export const University = styled.div`
     height: 17px;
@@ -110,8 +132,8 @@ export const University = styled.div`
     font-family: SF UI Display;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 12px;
+    line-height: 14px;
     color: #7A91B5;
 `
 
@@ -121,16 +143,16 @@ export const City = styled.div`
     font-family: SF UI Display;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 12px;
+    line-height: 14px;
     color: #7A91B5;
 `
 export const AddingUser = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 112px;
-    width: 390px;
+    height: 72px;
+    width: 100%;
     font-size: 20px;
     border: dashed 1px #5465ff;
     border-radius: 5px;
@@ -146,6 +168,13 @@ export const DeleteIcon = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
+    margin: 0px 10px;
+`
+export const Text = styled.div`
+    height: 24px;
+    width: 286px;
+    display: flex;
+    justify-content: flex-start;
 `

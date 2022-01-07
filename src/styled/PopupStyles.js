@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import logo from './../images/logo.png'
 
 export const MainContainer = styled.div`
     ${'' /* background-image: url(${logo}); */}
@@ -76,4 +75,8 @@ export const Button = styled.button`
     margin: 10px;
     height: 30px;
     width: 100px;
+    &:hover {
+        box-shadow: 0px 0px 15px 1px grey;
+        backdrop-filter: brightness (100%);
+    }
 `

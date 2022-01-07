@@ -60,7 +60,7 @@ const Popup = (props) => {
                 </CardContainer>
                 <InfoCell>
                     <Label style={{width: 120 }} >E-mail:</Label>
-                    <Input 
+                    <Input
                         type='email'
                         style={{width: 410}}
                         defaultValue={student.mail}

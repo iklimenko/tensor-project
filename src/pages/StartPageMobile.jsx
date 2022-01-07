@@ -1,4 +1,4 @@
-import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo } from '../styled/StartPageStyles';
+import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo, TextContainer } from '../styled/StartPageMobileStyles';
 
 import logo from './../images/logo.png'
 import image from './../images/image.png'
@@ -12,14 +12,12 @@ const StartPage = () => {
   <MainContainer>
     <Container>
       <LogoContainer>
-        <img height="74px" width="74px" src={logo} alt="Логотип тензора"></img>
+        <img height="42px" width="42px" style={ {margin: '16px 0px'}} src={logo} alt="Логотип тензора"></img>
         <TextLogo>TENSOR SCHOOL</TextLogo>
       </LogoContainer>
       <InfoContainer>
-        <MainImage>
-          <img height="251px" width="294px" src={image} alt="Центральное изображение"></img>
-        </MainImage>
-        <Paragraph>{TEXT}</Paragraph>
+          <img height="178px" width="209px" src={image} alt="Центральное изображение"></img>
+        <Paragraph><TextContainer>{TEXT}</TextContainer></Paragraph>
       </InfoContainer>
     </Container>
   </MainContainer>

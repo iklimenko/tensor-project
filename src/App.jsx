@@ -6,13 +6,19 @@ import {
 } from "react-router-dom";
 import StartPage from './pages/StartPage'
 import StudentsList from './pages/StudentsList'
+import StudentsListMobile from './pages/StudentsListMobile'
+import StartPageMobile from './pages/StartPageMobile'
 
-
+const WIDTH_BREAKPOINT = 414
 
 const App = () => {
+
+  const widthWindow =  window.screen.width
+  const isDesktop = (widthWindow > WIDTH_BREAKPOINT) ? true : false
+
   return (
     <Router>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Tensor</Link>
@@ -21,11 +27,11 @@ const App = () => {
             <Link to="/students">Students</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
       <Routes>
-        <Route path='/students' element={<StudentsList/>} />
+        <Route path='/students' element={ isDesktop ? <StudentsList/> : <StudentsListMobile/>} />
 
-        <Route path='/' element={<StartPage/>} />
+        <Route path='/' element={ isDesktop ? <StartPage/> : <StartPageMobile/>} />
       </Routes>
     </Router>
     );

@@ -1,4 +1,4 @@
-import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, Logo, DeleteIcon } from '../styled/ListStyles';
+import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, Logo, DeleteIcon } from '../styled/ListMobileStyles';
 
 import deleteicon from '../images/deleteicon.jpg'
 import logo from '../images/logo.png'
@@ -13,7 +13,7 @@ const Student = (props) => {
     return (
         <StudentContainer key = {student._id}>
             <Avatar>
-                <img height="80px" width="80px" src={logo} alt="Логотип тензора"></img>
+                <img height="56px" width="56px" src={logo} alt="Логотип тензора"></img>
             </Avatar>
             <StudInfoContainer onClick={props.onClick}>
                 <PrimaryInfo>{student.name}</PrimaryInfo>
@@ -28,7 +28,7 @@ const Student = (props) => {
             </StudInfoContainer>
             <DeleteIcon 
                 onClick={(event) => { props.onDelete(student) }}>
-                    <img height="30px" width="30px"src={deleteicon} alt="Delete Icon" />
+                    <img height="20px" width="20px" src={deleteicon} alt="Delete Icon" />
             </DeleteIcon>
         </StudentContainer>)
     

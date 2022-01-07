@@ -1,10 +1,10 @@
-import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser } from '../styled/ListStyles';
+import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser, Header, HeaderUp, HeaderDown, Text } from '../styled/ListMobileStyles';
 import { useState } from 'react';
 
 import Popup from './Popup'
-import Student from './Student'
+import Student from './StudentMobile'
 
-import logo from './../images/logo.png'
+import arrow from './../images/Vector.png'
 
 const students = [{
     _id: 213,
@@ -70,14 +70,14 @@ const StudentsList = () => {
                       onDelete={(student) => { deleteStudent(student) }}
                       isNew={isNew}
                   />) : (<></>) }
+      <Header>
+          <HeaderUp></HeaderUp>
+          <HeaderDown>
+              <span><img height="16px" width="16px" src={arrow} alt="Логотип тензора"></img></span>
+              <Text>Мои одноклассники</Text>
+          </HeaderDown>
+      </Header>
       <MainContainer>
-        <LogoContainer>
-            <LogoNameContainer>
-              <Logo><img height="41px" width="41px" src={logo} alt="Логотип тензора"></img></Logo>
-              <TextLogo>TENSOR SCHOOL</TextLogo>
-            </LogoNameContainer>
-        </LogoContainer>
-        <Container>
           { students ? (
             students.map((student) => (
               <Student 
@@ -101,7 +101,6 @@ const StudentsList = () => {
           >
           Добавить студента
           </AddingUser>
-        </Container>
       </MainContainer>
     </div>
   );
