@@ -28,7 +28,7 @@ const StudentMobile = (props) => {
             </StudInfoContainer>
             <DeleteIcon 
                 onClick={(event) => { props.onDelete(student) }}>
-                    <img height="20px" width="20px" src={deleteicon} alt="Delete Icon" />
+                    <img height="22px" width="22px" src={deleteicon} alt="Delete Icon" />
             </DeleteIcon>
         </StudentContainer>)
     

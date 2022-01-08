@@ -15,10 +15,15 @@ const Popup = (props) => {
             <InfoContainer>
                 <CardContainer>
                     <Avatar>
-                        <img height="160px" width="160px" src={logo} alt="Логотип тензора"></img>
+                        <img height="160px" width="160px" src={curStudent.avatar.name} alt="Логотип тензора"></img>
                         <Input 
                             type="file"
                             style={{fontSize: 11.5, borderRadius: 3}}
+                            onChange={e => { 
+                                const binaryData = []
+                                binaryData.push()
+                                setCurStudent({...curStudent, avatar: e.target.files[0]}) 
+                                }}
                         />
                     </Avatar>
                     <StudentInfo>

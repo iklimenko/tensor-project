@@ -1,7 +1,8 @@
 import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../styled/ListStyles';
 
 import deleteicon from '../images/deleteicon.jpg'
-import logo from '../images/logo.png'
+import logo from '../images/face1.jpg'
+
 import { useEffect, useState } from 'react'
 
 const Student = (props) => {
@@ -11,11 +12,12 @@ const Student = (props) => {
     return (
         <StudentContainer key = {student._id}>
             <Avatar>
-                <img 
+                <img
+                    style = {{borderRadius: '10px'}}
                     height="80px" 
                     width="80px" 
                     src={logo} 
-                    alt="Логотип тензора" 
+                    alt="Фото" 
                 />
             </Avatar>
             <StudInfoContainer onClick={props.onClick}>
