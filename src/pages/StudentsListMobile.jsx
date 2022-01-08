@@ -1,7 +1,7 @@
 import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser, Header, HeaderUp, HeaderDown, Text } from '../styled/ListMobileStyles';
 import { useState } from 'react';
 
-import Popup from './Popup'
+import Popup from './PopupMobile'
 import Student from './StudentMobile'
 
 import arrow from './../images/Vector.png'

@@ -1,63 +1,45 @@
 import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser } from '../styled/ListStyles';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getStudentsListAPI } from '../API/StudentsListAPI';
 
 import Popup from './Popup'
 import Student from './Student'
 
 import logo from './../images/logo.png'
 
-const students = [{
-    _id: 213,
-    name: "Мария Иванова",
-    university: 'УГАТУ',
-    course: 2,
-    city: 'Уфа',
-    description: 'Good student',
-    mail: 'example@mail.ru',
-    phoneNumber: 89001002030
-}, 
-{
-    _id: 4356,
-    name: "Анна Волкова",
-    university: 'СибГУТИ',
-    course: 2,
-    city: 'Новосибирск',
-    description: 'Good student',
-    mail: 'example@mail.ru',
-    phoneNumber: 89001002030
-}, 
-{   
-    _id: 123234, 
-    name: "Иван Клименко",
-    university: 'ЯрГУ',
-    course: 4,
-    city: 'Ярославль',
-    description: 'Good student',
-    mail: 'example@mail.ru',
-    phoneNumber: 89001002030
-}]
-
 const StudentsList = () => {
 
-  console.log(`Ширина окна: ${window.screen.width}px`)
+  useEffect(() => { loadStudentList() }, [])
+
+  const [list, setList] = useState([]);
   const [isPopup, setPopup] = useState(false);
   const [curStudent, setCurStudent] = useState({});
   const [isNew, setIsNew] = useState();
 
+  const loadStudentList = async () => { 
+    const studentsList = await getStudentsListAPI()
+    setList(studentsList)
+  }
+
   const changeStudent = (student) => {
-    const position = students.findIndex(item => student._id === item._id)
-    students.splice(position, 1, student);
+    const newList = [...list]
+    const position = newList.findIndex(item => student._id === item._id)
+    newList.splice(position, 1, student);
+    setList(newList);
   }
 
   const addStudent = (student) => {
+    const newList = [...list]
     const rand_id = Math.floor(Math.random() * 1000) + 1
-    students.push({...student, _id: rand_id});
-    console.log(students)
+    newList.push({...student, _id: rand_id});
+    setList(newList);
   }
 
   const deleteStudent = (student) => {
-    const position = students.findIndex(item => student._id === item._id)
-    students.splice(position, 1);
+    const newList = [...list]
+    const position = newList.findIndex(item => student._id === item._id)
+    newList.splice(position, 1);
+    setList(newList);
   }
   
   return (
@@ -78,11 +60,11 @@ const StudentsList = () => {
             </LogoNameContainer>
         </LogoContainer>
         <Container>
-          { students ? (
-            students.map((student) => (
+          { list ? (
+            list.map((student) => (
               <Student 
                 key={student._id} 
-                opt = {{...student}} 
+                student = {student} 
                 onClick={e => {
                   setPopup(true)
                   setCurStudent(student);

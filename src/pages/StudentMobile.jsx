@@ -4,7 +4,7 @@ import deleteicon from '../images/deleteicon.jpg'
 import logo from '../images/logo.png'
 import { useEffect, useState } from 'react'
 
-const Student = (props) => {
+const StudentMobile = (props) => {
 
     const [student, setStudent] = useState({})
 
@@ -34,4 +34,4 @@ const Student = (props) => {
     
 }
 
-export default Student
+export default StudentMobile
