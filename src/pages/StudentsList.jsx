@@ -1,6 +1,6 @@
 import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser } from '../styled/ListStyles';
 import { useState, useEffect } from 'react';
-import { getStudentsListAPI } from '../API/StudentsListAPI';
+import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
 
 import Popup from './Popup'
 import Student from './Student'
@@ -21,25 +21,32 @@ const StudentsList = () => {
     setList(studentsList)
   }
 
-  const changeStudent = (student) => {
-    const newList = [...list]
-    const position = newList.findIndex(item => student._id === item._id)
-    newList.splice(position, 1, student);
-    setList(newList);
+  const changeStudent = async (student) => {
+    // const newList = [...list]
+    // const position = newList.findIndex(item => student.id === item.id)
+    // newList.splice(position, 1, student)
+    await updateStudentsListAPI(student, student.id)
+    loadStudentList()
   }
 
-  const addStudent = (student) => {
-    const newList = [...list]
-    const rand_id = Math.floor(Math.random() * 1000) + 1
-    newList.push({...student, _id: rand_id});
-    setList(newList);
+  const addStudent = async (student) => {
+    // const newList = [...list]
+    // const id = list.length + 1
+    // newList.push({...student, id: id})
+    // setList(newList)
+    // console.log(student)
+    await addStudentApi(student)
+    loadStudentList()
   }
 
-  const deleteStudent = (student) => {
-    const newList = [...list]
-    const position = newList.findIndex(item => student._id === item._id)
-    newList.splice(position, 1);
-    setList(newList);
+  const deleteStudent = async (student) => {
+    // const newList = [...list]
+    // const position = newList.findIndex(item => student.id === item.id)
+    // newList.splice(position, 1)
+    // setList(newList)
+    // console.log(student.id)
+    await deleteStudentApi(student.id)
+    loadStudentList()
   }
   
   return (
@@ -63,7 +70,7 @@ const StudentsList = () => {
           { list ? (
             list.map((student) => (
               <Student 
-                key={student._id} 
+                key={student.id} 
                 student = {student} 
                 onClick={e => {
                   setPopup(true)

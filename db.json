@@ -1,34 +1,44 @@
 {
-    "students": [
-        {
-            "_id": 213,
-            "name": "Мария Иванова",
-            "university": "УГАТУ",
-            "course": 2,
-            "city": "Уфа",
-            "mail": "exampl@mail.ru",
-            "phoneNumber": "89001002030",
-            "description": "Good student"
-        },
-        {
-            "_id": 4356,
-            "name": "Анна Волкова",
-            "university": "СибГУТИ",
-            "course": 2,
-            "city": "Новосибирск",
-            "mail": "exampl@mail.ru",
-            "phoneNumber": "89001002030",
-            "description": "Good student"
-        },
-        {
-            "_id": 123234,
-            "name": "Иван Клименко",
-            "university": "ЯрГУ",
-            "course": 4,
-            "city": "Ярославль",
-            "mail": "exampl@mail.ru",
-            "phoneNumber": "89001002030",
-            "description": "Good student"
-        }
-    ]
+  "students": [
+    {
+      "id": 1,
+      "name": "Мария Иванова",
+      "university": "УГАТУ",
+      "course": 2,
+      "city": "Уфа",
+      "mail": "exampl@mail.ru",
+      "phoneNumber": "89001002030",
+      "description": "Good student"
+    },
+    {
+      "id": 2,
+      "name": "Анна Волкова",
+      "university": "СибГУТИ",
+      "course": 2,
+      "city": "Новосибирск",
+      "mail": "exampl@mail.ru",
+      "phoneNumber": "89001002030",
+      "description": "Good student"
+    },
+    {
+      "id": 3,
+      "name": "Иван Клименко",
+      "university": "ЯрГУ",
+      "course": 4,
+      "city": "Ярославль",
+      "mail": "exampl@mail.ru",
+      "phoneNumber": "89001002030",
+      "description": "Good student"
+    },
+    {
+      "name": "Андрей",
+      "city": "Москва",
+      "university": "МГУ",
+      "course": "3",
+      "mail": "ex@mail.ru",
+      "phoneNumber": "89109775512",
+      "description": "Спортсмен",
+      "id": 4
+    }
+  ]
 }
