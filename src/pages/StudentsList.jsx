@@ -6,6 +6,7 @@ import Popup from './Popup'
 import Student from './Student'
 
 import logo from './../images/logo.png'
+import Loader from './Loader';
 
 const StudentsList = () => {
 
@@ -22,21 +23,17 @@ const StudentsList = () => {
   }
 
   const changeStudent = async (student) => {
-    // const newList = [...list]
-    // const position = newList.findIndex(item => student.id === item.id)
-    // newList.splice(position, 1, student)
-    await updateStudentsListAPI(student, student.id)
-    loadStudentList()
+    const newList = [...list]
+    const position = newList.findIndex(item => student.id === item.id)
+    newList.splice(position, 1, await updateStudentsListAPI(student))
+    
+    setList(newList)
   }
 
   const addStudent = async (student) => {
-    // const newList = [...list]
-    // const id = list.length + 1
-    // newList.push({...student, id: id})
-    // setList(newList)
-    // console.log(student)
-    await addStudentApi(student)
-    loadStudentList()
+    const newList = [...list]
+    newList.push(await addStudentApi(student))
+    setList(newList)
   }
 
   const deleteStudent = async (student) => {

@@ -8,7 +8,8 @@
       "city": "Уфа",
       "mail": "exampl@mail.ru",
       "phoneNumber": "89001002030",
-      "description": "Good student"
+      "description": "Good student",
+      "avatar": {}
     },
     {
       "id": 2,
@@ -24,7 +25,7 @@
       "id": 3,
       "name": "Иван Клименко",
       "university": "ЯрГУ",
-      "course": 4,
+      "course": "4",
       "city": "Ярославль",
       "mail": "exampl@mail.ru",
       "phoneNumber": "89001002030",

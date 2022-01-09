@@ -8,14 +8,15 @@ const Popup = (props) => {
 
   const student = props.student
   const [curStudent, setCurStudent] = useState(student)
-
+//   debugger
+//   console.log(URL.createObjectURL(curStudent.avatar))
   return (
     <MainContainer>
         <BackgroundContainer>
             <InfoContainer>
                 <CardContainer>
                     <Avatar>
-                        <img height="160px" width="160px" src={curStudent.avatar.name} alt="Логотип тензора"></img>
+                        <img height="160px" width="160px" src={curStudent.avatar?.name ? URL.createObjectURL(curStudent.avatar) : ''} alt="Логотип тензора"></img>
                         <Input 
                             type="file"
                             style={{fontSize: 11.5, borderRadius: 3}}

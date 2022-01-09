@@ -6,10 +6,9 @@ export const getStudentsListAPI = () =>
         headers: {
             Accept: 'application/json'
         }
-    })
-      .then(res => res.json())
+    }).then(res => res.json())
 
-export const updateStudentsListAPI = (student) => {
+export const updateStudentsListAPI = (student) =>
     fetch(`${API_URL}/${student.id}`, {
         method: 'PUT',
         headers: {
@@ -18,7 +17,6 @@ export const updateStudentsListAPI = (student) => {
         },
         body: JSON.stringify(student)
     }).then(res => res.json());
-}
     
 
 export const deleteStudentApi = (id) =>
