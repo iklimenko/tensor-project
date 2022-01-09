@@ -25,8 +25,8 @@ const StudentsList = () => {
   const changeStudent = async (student) => {
     const newList = [...list]
     const position = newList.findIndex(item => student.id === item.id)
-    newList.splice(position, 1, await updateStudentsListAPI(student))
-    
+    const res = await updateStudentsListAPI(student)
+    newList.splice(position, 1, res[0])
     setList(newList)
   }
 
@@ -37,13 +37,11 @@ const StudentsList = () => {
   }
 
   const deleteStudent = async (student) => {
-    // const newList = [...list]
-    // const position = newList.findIndex(item => student.id === item.id)
-    // newList.splice(position, 1)
-    // setList(newList)
-    // console.log(student.id)
     await deleteStudentApi(student.id)
-    loadStudentList()
+    const newList = [...list]
+    const position = newList.findIndex(item => student.id === item.id)
+    newList.splice(position, 1)
+    setList(newList)
   }
   
   return (
@@ -93,4 +91,4 @@ const StudentsList = () => {
   );
 }
 
-export default StudentsList;
+export default StudentsList

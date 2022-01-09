@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/students'
+const API_URL = 'http://localhost:3001/students'
 
 export const getStudentsListAPI = () => 
     fetch(`${API_URL}`, {
