@@ -16,7 +16,7 @@ const Popup = (props) => {
             <InfoContainer>
                 <CardContainer>
                     <Avatar>
-                        <img height="160px" width="160px" src={curStudent.avatar?.name ? URL.createObjectURL(curStudent.avatar) : ''} alt="Логотип тензора"></img>
+                        <img height="160px" width="160px" style={{ borderRadius: '7px' }} src={curStudent.avatar} alt="Логотип тензора"></img>
                         <Input 
                             type="file"
                             style={{fontSize: 11.5, borderRadius: 3}}
@@ -78,8 +78,8 @@ const Popup = (props) => {
                     <Input 
                         type='tel'
                         style={{width: 410}}
-                        defaultValue={student.phoneNumber}
-                        onChange={e => { setCurStudent({...curStudent, phoneNumber: e.target.value})} } 
+                        defaultValue={student.phone}
+                        onChange={e => { setCurStudent({...curStudent, phone: e.target.value})} } 
                     />
                 </InfoCell>
                 <InfoCell>

@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from pydantic.utils import deep_update
 import db_helper
+import uvicorn
+import const
+
 
 class Student(BaseModel):
     id: int = None
@@ -11,7 +13,7 @@ class Student(BaseModel):
     city: str
     course: int
     avatar: str
-    phoneNumber: str
+    phone: str
     mail: str
     description: str
 
@@ -35,7 +37,7 @@ def students_list():
             city,
             course,
             avatar,
-            "phoneNumber",
+            phone,
             mail,
             description 
         from students
@@ -51,11 +53,24 @@ def update(id: int, payload: Student):
         city = %s::text,
         course = %s::int,
         avatar = %s::text,
-        "phoneNumber" = %s::text,
+        phone = %s::text,
         mail = %s::text,
         description = %s::text
         where id = %s::int
-    """
+    """    
+
+    db_helper.execute_query(
+        sql,
+        payload.name or '',
+        payload.university or '',
+        payload.city or '',
+        payload.course or 1,
+        payload.avatar or '',
+        payload.phone or '',
+        payload.mail or '',
+        payload.description or '',
+        payload.id
+    )
 
     returned_sql = """
         select
@@ -65,13 +80,22 @@ def update(id: int, payload: Student):
             city,
             course,
             avatar,
-            "phoneNumber",
+            phone,
             mail,
-            description 
+            description
         from students
         where id = %s::int
     """
 
+    return db_helper.execute_query(returned_sql, payload.id)
+
+
+@app.post('/students')
+def create(payload: Student):
+    sql = """
+        insert into students (name, university, city, course, avatar, phone, mail, description)
+        values (%s::text, %s::text, %s::text, %s::int, %s::text, %s::text, %s::text, %s::text)
+    """  
     db_helper.execute_query(
         sql,
         payload.name,
@@ -79,11 +103,35 @@ def update(id: int, payload: Student):
         payload.city,
         payload.course,
         payload.avatar,
-        payload.phoneNumber,
+        payload.phone,
         payload.mail,
-        payload.description,
-        payload.id
+        payload.description
     )
-    return db_helper.execute_query(returned_sql, payload.id)
 
-    print(id, payload)
+    # returned_sql = """
+    #     select
+    #         id,
+    #         name,
+    #         university,
+    #         city,
+    #         course,
+    #         avatar,
+    #         phone,
+    #         mail,
+    #         description
+    #     from students
+    #     order by id desc limit 1 
+    # """
+    # return db_helper.execute_query(returned_sql)
+
+@app.delete("/students/{id}")
+def delete(id: int):
+    sql = """
+        delete from students
+        where id = %s::int
+    """    
+
+    db_helper.execute_query(sql, id)
+
+if __name__ == '__main__':
+    uvicorn.run(app, host=const.APP_IP, port=const.APP_PORT)

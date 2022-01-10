@@ -19,18 +19,20 @@ def create_connection() -> connect:
     return con   
 
 def execute_query(query: str, *args) -> List[dict]:
-    con = create_connection()    
+    con = create_connection() 
     if not con:
         return None 
     cursor = con.cursor(cursor_factory=RealDictCursor)
     try:
         cursor.execute(query, args)
         res = cursor.fetchall()
-    except ProgrammingError:
+    except ProgrammingError as e:
+        print(f"Error {e}")
         res = None
     except OperationalError as e:
         print(f"Error {e}")
         res = None
     finally:
         con.close()
+        print(res)
     return res

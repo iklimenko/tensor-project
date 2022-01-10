@@ -1,7 +1,6 @@
 import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../styled/ListStyles';
 
 import deleteicon from '../images/deleteicon.jpg'
-import logo from '../images/face1.jpg'
 
 import { useEffect, useState } from 'react'
 
@@ -16,7 +15,7 @@ const Student = (props) => {
                     style = {{borderRadius: '10px'}}
                     height="80px" 
                     width="80px" 
-                    src={logo} 
+                    src={student.avatar} 
                     alt="Фото" 
                 />
             </Avatar>

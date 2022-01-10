@@ -80,8 +80,8 @@ const Popup = (props) => {
                                 />
                                 <Input 
                                     type="text" 
-                                    defaultValue={student.phoneNumber}
-                                    onChange={e => { setCurStudent({...curStudent, phoneNumber: e.target.value})} }
+                                    defaultValue={student.phone}
+                                    onChange={e => { setCurStudent({...curStudent, phone: e.target.value})} }
                                 />
                             </InfoCell>
                             <InfoCell>

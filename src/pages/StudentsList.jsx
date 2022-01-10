@@ -31,9 +31,14 @@ const StudentsList = () => {
   }
 
   const addStudent = async (student) => {
+    student.avatar = 'qwer'
+    console.log(student)
     const newList = [...list]
-    newList.push(await addStudentApi(student))
-    setList(newList)
+    // const res = await addStudentApi(student)
+    // console.log(res[0])
+    // newList.push(res[0])
+    await addStudentApi(student)
+    loadStudentList()
   }
 
   const deleteStudent = async (student) => {

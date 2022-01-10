@@ -30,10 +30,10 @@ export const deleteStudentApi = (id) =>
     
 export const addStudentApi = (student) =>
     fetch(`${API_URL}`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(student)
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(student)
     }).then((res) => res.json());
