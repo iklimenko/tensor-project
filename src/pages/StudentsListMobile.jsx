@@ -1,6 +1,7 @@
-import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser, Header, HeaderUp, HeaderDown, Text } from '../styled/ListMobileStyles';
+import { MainContainer, AddingUser, Header, HeaderUp, HeaderDown, Text, LoaderContainer } from '../styled/ListMobileStyles';
 import { useState, useEffect } from 'react';
 import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
+import Loader from './Loader';
 
 import Popup from './PopupMobile'
 import Student from './StudentMobile'
@@ -12,41 +13,49 @@ const StudentsList = () => {
   useEffect(() => { loadStudentList() }, [])
 
   const [list, setList] = useState([]);
+  const [loader, setLoader] = useState(false);
   const [isPopup, setPopup] = useState(false);
   const [curStudent, setCurStudent] = useState({});
   const [isNew, setIsNew] = useState();
 
   const loadStudentList = async () => { 
+    setLoader(true)
     const studentsList = await getStudentsListAPI()
     setList(studentsList)
+    setLoader(false)
   }
 
   const changeStudent = async (student) => {
-    // const newList = [...list]
-    // const position = newList.findIndex(item => student.id === item.id)
-    // newList.splice(position, 1, student)
-    await updateStudentsListAPI(student, student.id)
-    loadStudentList()
+    setLoader(true)
+    const newList = [...list]
+    const position = newList.findIndex(item => student.id === item.id)
+    const res = await updateStudentsListAPI(student)
+    newList.splice(position, 1, res[0])
+    setList(newList)
+    setLoader(false)
   }
 
   const addStudent = async (student) => {
-    // const newList = [...list]
-    // const id = list.length + 1
-    // newList.push({...student, id: id})
-    // setList(newList)
+    setLoader(true)
+    // student.avatar = 'qwer'
     // console.log(student)
+    // const newList = [...list]
+    // const res = await addStudentApi(student)
+    // console.log(res[0])
+    // newList.push(res[0])
     await addStudentApi(student)
     loadStudentList()
+    setLoader(false)
   }
 
   const deleteStudent = async (student) => {
-    // const newList = [...list]
-    // const position = newList.findIndex(item => student.id === item.id)
-    // newList.splice(position, 1)
-    // setList(newList)
-    // console.log(student.id)
+    setLoader(true)
     await deleteStudentApi(student.id)
-    loadStudentList()
+    const newList = [...list]
+    const position = newList.findIndex(item => student.id === item.id)
+    newList.splice(position, 1)
+    setList(newList)
+    setLoader(false)
   }
   
   return (
@@ -66,6 +75,8 @@ const StudentsList = () => {
               <Text>Мои одноклассники</Text>
           </HeaderDown>
       </Header>
+      {loader ? (<LoaderContainer><Loader /></LoaderContainer>
+        ) : (
       <MainContainer>
           { list ? (
             list.map((student) => (
@@ -91,6 +102,7 @@ const StudentsList = () => {
           Добавить студента
           </AddingUser>
       </MainContainer>
+        )}
     </div>
   );
 }

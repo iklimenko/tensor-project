@@ -149,3 +149,9 @@ export const DeleteIcon = styled.button`
     height: 30px;
     width: 30px;
 `
+export const LoaderContainer = styled.div`
+    height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

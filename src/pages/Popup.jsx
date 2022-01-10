@@ -1,30 +1,28 @@
 import { BackgroundContainer, InfoContainer, MainContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer } from '../styled/PopupStyles';
-import { useState, useEffect } from 'react';
-
-import logo from './../images/logo.png'
-
+import { useState } from 'react';
 
 const Popup = (props) => {
 
   const student = props.student
   const [curStudent, setCurStudent] = useState(student)
-//   debugger
-//   console.log(URL.createObjectURL(curStudent.avatar))
   return (
     <MainContainer>
         <BackgroundContainer>
             <InfoContainer>
                 <CardContainer>
                     <Avatar>
-                        <img height="160px" width="160px" style={{ borderRadius: '7px' }} src={curStudent.avatar} alt="Логотип тензора"></img>
-                        <Input 
-                            type="file"
-                            style={{fontSize: 11.5, borderRadius: 3}}
+                        { !props.isNew ? ( 
+                            <img height="160px" width="160px" style={{ borderRadius: '7px' }} src={curStudent.avatar} alt="Логотип тензора"></img>
+                        ) : (
+                            <div style={{ height: "159px", width: "159px",  borderRadius: '7px', border: '1px solid black' }} />
+                        )}
+                        <Input
+                            placeholder="URL аватара"
+                            type="text"
+                            style={{fontSize: 11.5, borderRadius: 3, height: '14px'}}
                             onChange={e => { 
-                                const binaryData = []
-                                binaryData.push()
-                                setCurStudent({...curStudent, avatar: e.target.files[0]}) 
-                                }}
+                                setCurStudent({...curStudent, avatar: e.target.value}) 
+                            }}
                         />
                     </Avatar>
                     <StudentInfo>

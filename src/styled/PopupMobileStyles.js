@@ -35,7 +35,7 @@ export const InfoContainer = styled.div`
 export const Input = styled.input`
     background-color: #eee;
     height: 14px;
-    width: 177px;
+    width: 170px;
     font-family: SF UI Display;
     font-style: normal;
     font-weight: normal;
@@ -73,6 +73,7 @@ export const InfoCell = styled.div`
     width: 199px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 `
 export const Avatar = styled.div`
     height: 130px;
@@ -124,9 +125,9 @@ export const CancelIcon = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15px;
-    width: 15px;
+    height: 13px;
+    width: 13px;
     position: relative;
-    top: -69px;
-    right: -315px;
+    top: -87px;
+    right: -317px;
 `

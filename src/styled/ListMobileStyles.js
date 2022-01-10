@@ -178,3 +178,9 @@ export const Text = styled.div`
     display: flex;
     justify-content: flex-start;
 `
+export const LoaderContainer = styled.div`
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

@@ -63,11 +63,25 @@ const Popup = (props) => {
                                     onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
                                     />
                                 ) : (
-                                    <Input 
-                                    type="text" 
-                                    defaultValue={` ${student.university}, ${student.course} курс`}
-                                    onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
-                                    />
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '175px'}}>
+                                        <Input 
+                                        style={{
+                                            width: '80px'
+                                        }}
+                                        type="text" 
+                                        defaultValue={`${student.university}`}
+                                        onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
+                                        />
+                                        <Input 
+                                        placeholder='Курс'
+                                        style={{
+                                            width: '80px'
+                                        }}
+                                        type="number" 
+                                        defaultValue={`${student.course}`}
+                                        onChange={e => { setCurStudent({...curStudent, course: e.target.value})} }
+                                        />
+                                    </div>
                                 )}
                                 
                             </InfoCell>
@@ -135,20 +149,22 @@ const Popup = (props) => {
                     </CardContainer>
                     <Avatar>
                         <img 
+                            style={{borderRadius: '7px'}}
                             height="104px" 
                             width="104px" 
-                            src={logo} 
+                            src={student.avatar} 
                             alt="Аватар"
                         />
-                        <Input 
-                                type="file"
-                                style={{
-                                    margin: 0,
-                                    height: 13,
-                                    width: 104,
-                                    fontSize: 5.5, 
-                                    borderRadius: 3
-                                    }}
+                        <Input  
+                            placeholder='URL аватара'
+                            type="text"
+                            style={{
+                                margin: 0,
+                                height: 13,
+                                width: 104,
+                                fontSize: 11, 
+                                borderRadius: 3
+                                }}
                         />
                     </Avatar>
                     

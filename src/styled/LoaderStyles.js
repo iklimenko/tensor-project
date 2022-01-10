@@ -9,5 +9,5 @@ export const Container = styled.div`
     margin: 0 auto 1em;
     display: inline-block;
     vertical-align: top;
-    transform: scale(1.5, 1.5);
+    transform: scale(1.8, 1.8);
 `

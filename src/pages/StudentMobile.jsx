@@ -13,7 +13,7 @@ const StudentMobile = (props) => {
     return (
         <StudentContainer key = {student._id}>
             <Avatar>
-                <img height="56px" width="56px" src={logo} alt="Логотип тензора"></img>
+                <img height="56px" width="56px" style={{borderRadius: '7px'}} src={student.avatar} alt="Логотип тензора"></img>
             </Avatar>
             <StudInfoContainer onClick={props.onClick}>
                 <PrimaryInfo>{student.name}</PrimaryInfo>

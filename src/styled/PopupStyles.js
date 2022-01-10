@@ -80,3 +80,10 @@ export const Button = styled.button`
         backdrop-filter: brightness (100%);
     }
 `
+
+export const TextContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    height: 10px;
+    width: 200px;
+`
