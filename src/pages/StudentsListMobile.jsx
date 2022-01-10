@@ -69,40 +69,50 @@ const StudentsList = () => {
                       isNew={isNew}
                   />) : (<></>) }
       <Header>
-          <HeaderUp></HeaderUp>
+          <HeaderUp />
           <HeaderDown>
-              <span><img height="16px" width="16px" src={arrow} alt="Логотип тензора"></img></span>
+              <span>
+                <img 
+                  height="16px" 
+                  width="16px" 
+                  src={arrow} 
+                  alt="Логотип тензора"
+                />
+              </span>
               <Text>Мои одноклассники</Text>
           </HeaderDown>
       </Header>
-      {loader ? (<LoaderContainer><Loader /></LoaderContainer>
-        ) : (
-      <MainContainer>
-          { list ? (
-            list.map((student) => (
-              <Student 
-                key={student._id} 
-                opt = {{...student}} 
-                onClick={e => {
-                  setPopup(true)
-                  setCurStudent(student);
-                  setIsNew(false)
-                }}
-                onDelete={(student) => { deleteStudent(student) }}
-              />
-            ))) : (<></>)
-          }
-          <AddingUser 
-            onClick={e => {
-              setPopup(true)
-              setIsNew(true)
-              setCurStudent({})
-            }}
-          >
-          Добавить студента
-          </AddingUser>
-      </MainContainer>
-        )}
+      {loader ? (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      ) : (
+        <MainContainer>
+            { list ? (
+              list.map((student) => (
+                <Student 
+                    key={student.id} 
+                    student = {student} 
+                    onClick={e => {
+                      setPopup(true)
+                      setCurStudent(student);
+                      setIsNew(false)
+                    }}
+                    onDelete={(student) => { deleteStudent(student) }}
+                  />
+              ))) : (<></>)
+            }
+            <AddingUser 
+              onClick={e => {
+                setPopup(true)
+                setIsNew(true)
+                setCurStudent({})
+              }}
+            >
+            Добавить студента
+            </AddingUser>
+        </MainContainer>
+      )}
     </div>
   );
 }

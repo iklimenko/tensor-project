@@ -1,7 +1,6 @@
-import { BackgroundContainer, InfoContainer, MainContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer, Container, NameContainer, TextArea, CancelIcon } from '../styled/PopupMobileStyles';
-import { useState, useEffect } from 'react';
+import { BackgroundContainer, InfoContainer, MainContainer, Input,  CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer, Container, NameContainer, TextArea, CancelIcon } from '../styled/PopupMobileStyles';
+import { useState } from 'react';
 
-import logo from './../images/logo.png'
 import cancel from './../images/cancel.png'
 import phone from './../images/phone.png'
 import city from './../images/city.png'
@@ -58,32 +57,36 @@ const Popup = (props) => {
                                 />
                                 {props.isNew ? (
                                     <Input 
-                                    type="text" 
-                                    defaultValue={student.university}
-                                    onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
+                                        type="text" 
+                                        defaultValue={student.university}
+                                        onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
                                     />
                                 ) : (
-                                    <div style={{ display: 'flex', justifyContent: 'space-between', width: '175px'}}>
+                                    <div 
+                                        style={{ 
+                                            display: 'flex', 
+                                            justifyContent: 'space-between', 
+                                            width: '175px'
+                                        }}>
+                                            <Input 
+                                                style={{
+                                                    width: '80px'
+                                                }}
+                                                type="text" 
+                                                defaultValue={`${student.university}`}
+                                                onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
+                                            />
                                         <Input 
-                                        style={{
-                                            width: '80px'
-                                        }}
-                                        type="text" 
-                                        defaultValue={`${student.university}`}
-                                        onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
-                                        />
-                                        <Input 
-                                        placeholder='Курс'
-                                        style={{
-                                            width: '80px'
-                                        }}
-                                        type="number" 
-                                        defaultValue={`${student.course}`}
-                                        onChange={e => { setCurStudent({...curStudent, course: e.target.value})} }
+                                            placeholder='Курс'
+                                            style={{
+                                                width: '80px'
+                                            }}
+                                            type="number" 
+                                            defaultValue={`${student.course}`}
+                                            onChange={e => { setCurStudent({...curStudent, course: e.target.value})} }
                                         />
                                     </div>
                                 )}
-                                
                             </InfoCell>
                             <InfoCell>
                                 <img 
@@ -113,34 +116,53 @@ const Popup = (props) => {
                             </InfoCell>
                         </StudentInfo>
                         <ButtonContainer>
-                            {props.isNew ? (
+                            {props.isNew ? 
+                            (
                                 <Button 
-                                style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0, fontSize: '8.2px'}}
-                                onClick={(event) => {
-                                    props.onAdd(curStudent)
-                                    props.closePopup()
-                                }}
+                                    style={{
+                                        backgroundColor: '#4CAF50', 
+                                        color: 'white', 
+                                        borderRadius: 5, 
+                                        border: 0, 
+                                        fontSize: '8.2px'
+                                    }}
+                                    onClick={(event) => {
+                                        props.onAdd(curStudent)
+                                        props.closePopup()
+                                    }}
                                 >
                                     Добавить
                                 </Button>
-                                ) : (
+                            ) : (
                                 <div>
                                     <Button 
-                                    style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0, fontSize: '8.2px'}}
-                                    onClick={(event) => {
-                                        props.onEdit(curStudent)
-                                        props.closePopup()
-                                    }}
+                                        style={{
+                                            backgroundColor: '#4CAF50', 
+                                            color: 'white', 
+                                            borderRadius: 5, 
+                                            border: 0, 
+                                            fontSize: '8.2px'
+                                        }}
+                                        onClick={(event) => {
+                                            props.onEdit(curStudent)
+                                            props.closePopup()
+                                        }}
                                     >
                                         Сохранить
                                     </Button>
                                     <Button 
-                                        style={{backgroundColor: '#a80000', color: 'white', borderRadius: 5, border: 0, fontSize: '8.2px'}}
+                                        style={{
+                                            backgroundColor: '#a80000', 
+                                            color: 'white', 
+                                            borderRadius: 5, 
+                                            border: 0, 
+                                            fontSize: '8.2px'
+                                        }}
                                         onClick={(event) => { 
                                             props.onDelete(curStudent);
                                             props.closePopup(); 
-                                        }
-                                    }>
+                                        }}
+                                    >
                                         Удалить
                                     </Button>
                                 </div>

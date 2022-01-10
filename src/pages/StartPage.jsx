@@ -17,7 +17,7 @@ const StartPage = () => {
       </LogoContainer>
       <InfoContainer>
         <MainImage>
-          <img height="251px" width="294px" src={image} alt="Центральное изображение"></img>
+          <img height="251px" width="294px" src={image} alt="Титульное изображение"></img>
         </MainImage>
         <Paragraph>{TEXT}</Paragraph>
       </InfoContainer>

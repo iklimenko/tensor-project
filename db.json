@@ -7,9 +7,9 @@
       "course": 2,
       "city": "Уфа",
       "mail": "exampl@mail.ru",
-      "phoneNumber": "89001002030",
+      "phone": "89001002030",
       "description": "Good student",
-      "avatar": {}
+      "avatar": ""
     },
     {
       "id": 2,
@@ -18,8 +18,9 @@
       "course": 2,
       "city": "Новосибирск",
       "mail": "exampl@mail.ru",
-      "phoneNumber": "89001002030",
-      "description": "Good student"
+      "phone": "89001002030",
+      "description": "Good student",
+      "avatar": ""
     },
     {
       "id": 3,
@@ -28,8 +29,9 @@
       "course": "4",
       "city": "Ярославль",
       "mail": "exampl@mail.ru",
-      "phoneNumber": "89001002030",
-      "description": "Good student"
+      "phone": "89001002030",
+      "description": "Good student",
+      "avatar": ""
     },
     {
       "name": "Андрей",
@@ -37,9 +39,10 @@
       "university": "МГУ",
       "course": "3",
       "mail": "exam@mail.ru",
-      "phoneNumber": "89109775512",
+      "phone": "89109775512",
       "description": "Спортсмен",
-      "id": 4
+      "id": 4,
+      "avatar": ""
     }
   ]
 }

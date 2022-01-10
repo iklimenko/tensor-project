@@ -16,7 +16,7 @@ const StartPage = () => {
         <TextLogo>TENSOR SCHOOL</TextLogo>
       </LogoContainer>
       <InfoContainer>
-          <img height="178px" width="209px" src={image} alt="Центральное изображение"></img>
+          <img height="178px" width="209px" src={image} alt="Титульное изображение"></img>
         <Paragraph><TextContainer>{TEXT}</TextContainer></Paragraph>
       </InfoContainer>
     </Container>

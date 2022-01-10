@@ -12,9 +12,22 @@ const Popup = (props) => {
                 <CardContainer>
                     <Avatar>
                         { !props.isNew ? ( 
-                            <img height="160px" width="160px" style={{ borderRadius: '7px' }} src={curStudent.avatar} alt="Логотип тензора"></img>
+                            <img 
+                                height="160px" 
+                                width="160px" 
+                                style={{ borderRadius: '7px' }} 
+                                src={curStudent.avatar} 
+                                alt="Логотип тензора" 
+                            />
                         ) : (
-                            <div style={{ height: "159px", width: "159px",  borderRadius: '7px', border: '1px solid black' }} />
+                            <div 
+                                style={{ 
+                                    height: "159px", 
+                                    width: "159px",  
+                                    borderRadius: '7px', 
+                                    border: '1px solid black' 
+                                }} 
+                            />
                         )}
                         <Input
                             placeholder="URL аватара"
@@ -81,7 +94,7 @@ const Popup = (props) => {
                     />
                 </InfoCell>
                 <InfoCell>
-                    <Label style={{width: 120 }} >О студенте:</Label>
+                    <Label style={{ width: 120 }} >О студенте:</Label>
                     <Input 
                         type='text'
                         style={{width: 410}}
@@ -92,43 +105,62 @@ const Popup = (props) => {
                 <ButtonContainer>
                     {props.isNew ? (
                         <Button 
-                        style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}
-                        onClick={(event) => {
-                            props.onAdd(curStudent)
-                            props.closePopup()
-                        }}
+                            style={{
+                                backgroundColor: '#4CAF50', 
+                                color: 'white', 
+                                borderRadius: 5, 
+                                border: 0
+                            }}
+                            onClick={(event) => {
+                                props.onAdd(curStudent)
+                                props.closePopup()
+                            }}
                         >
                             Добавить
                         </Button>
                     ) : (
                         <div>
                             <Button 
-                            style={{backgroundColor: '#4CAF50', color: 'white', borderRadius: 5, border: 0}}
-                            onClick={(event) => {
-                                props.onEdit(curStudent)
-                                props.closePopup()
-                            }}
+                                style={{
+                                    backgroundColor: '#4CAF50', 
+                                    color: 'white', 
+                                    borderRadius: 5, 
+                                    border: 0
+                                }}
+                                onClick={(event) => {
+                                    props.onEdit(curStudent)
+                                    props.closePopup()
+                                }}
                             >
                                 Сохранить
                             </Button>
                             <Button 
-                                style={{backgroundColor: '#a80000', color: 'white', borderRadius: 5, border: 0}}
+                                style={{
+                                    backgroundColor: '#a80000', 
+                                    color: 'white', 
+                                    borderRadius: 5, 
+                                    border: 0
+                                }}
                                 onClick={(event) => { 
                                     props.onDelete(curStudent);
                                     props.closePopup(); 
-                                }
-                            }>
+                                }}
+                            >
                                 Удалить
                             </Button>
                         </div>
                     )}
                     <Button 
-                        style={{backgroundColor: '#555555', color: 'white', borderRadius: 5, border: 0}}
+                        style={{
+                            backgroundColor: '#555555', 
+                            color: 'white', 
+                            borderRadius: 5, 
+                            border: 0
+                        }}
                         onClick={(event) => { props.closePopup(); }
                     }>
                         Отмена
                     </Button>
-
                 </ButtonContainer>
             </InfoContainer>
         </BackgroundContainer>

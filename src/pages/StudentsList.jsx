@@ -68,8 +68,11 @@ const StudentsList = () => {
                         onDelete={(student) => { deleteStudent(student) }}
                         isNew={isNew}
                     />) : (<></>) }
-      {loader ? (<LoaderContainer><Loader /></LoaderContainer>
-        ) : (
+      {loader ? (
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
+      ) : (
         <MainContainer>
           <LogoContainer>
               <LogoNameContainer>

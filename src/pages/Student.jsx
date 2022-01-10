@@ -2,14 +2,12 @@ import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo
 
 import deleteicon from '../images/deleteicon.jpg'
 
-import { useEffect, useState } from 'react'
-
 const Student = (props) => {
 
     const {student} = props
     
     return (
-        <StudentContainer key = {student._id}>
+        <StudentContainer key = {student.id}>
             <Avatar>
                 <img
                     style = {{borderRadius: '10px'}}
@@ -20,13 +18,13 @@ const Student = (props) => {
                 />
             </Avatar>
             <StudInfoContainer onClick={props.onClick}>
-                <PrimaryInfo>{student.name || ''}</PrimaryInfo>
+                <PrimaryInfo>{student.name}</PrimaryInfo>
                 <SecondaryInfo>
                     <University>
-                    {`${student.university || ''} ${student.course || ''} курс`}
+                    {`${student.university} ${student.course} курс`}
                     </University>
                     <City>
-                    {`г. ${student.city || ''}`}
+                    {`г. ${student.city}`}
                     </City>
                 </SecondaryInfo>
             </StudInfoContainer>
@@ -40,7 +38,6 @@ const Student = (props) => {
                     />
             </DeleteIcon>
         </StudentContainer>)
-    
 }
 
 export default Student
