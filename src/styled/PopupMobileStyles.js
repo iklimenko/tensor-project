@@ -94,6 +94,10 @@ export const ButtonContainer = styled.div`
 `
 
 export const Button = styled.button`
+    color: white;
+    border-radius: 5px;
+    border: 0px;
+    font-size: 8.2px;
     margin: 5px;
     height: 20px;
     width: 50px;

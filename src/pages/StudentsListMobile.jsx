@@ -1,9 +1,9 @@
 import { MainContainer, AddingUser, Header, HeaderUp, HeaderDown, Text, LoaderContainer } from '../styled/ListMobileStyles';
 import { useState, useEffect } from 'react';
 import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
-import Loader from './Loader';
+import Loader from '../components/Loader';
 
-import Popup from './PopupMobile'
+import Popup from '../components/PopupMobile'
 import Student from './StudentMobile'
 
 import arrow from './../images/Vector.png'

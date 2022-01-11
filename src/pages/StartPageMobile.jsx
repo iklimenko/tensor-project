@@ -1,4 +1,4 @@
-import { Container, InfoContainer, LogoContainer, MainContainer, MainImage, Paragraph, TextLogo, TextContainer } from '../styled/StartPageMobileStyles';
+import { Container, InfoContainer, LogoContainer, MainContainer, Paragraph, TextLogo, TextContainer } from '../styled/StartPageMobileStyles';
 
 import logo from './../images/logo.png'
 import image from './../images/image.png'

@@ -72,6 +72,9 @@ export const ButtonContainer = styled.div`
 `
 
 export const Button = styled.button`
+    color: white; 
+    border-radius: 5px; 
+    border: 0;
     margin: 10px;
     height: 30px;
     width: 100px;

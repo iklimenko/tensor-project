@@ -2,11 +2,11 @@ import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, L
 import { useState, useEffect } from 'react';
 import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
 
-import Popup from './Popup'
+import Popup from '../components/Popup'
 import Student from './Student'
 
 import logo from './../images/logo.png'
-import Loader from './Loader';
+import Loader from '../components/Loader';
 
 const StudentsList = () => {
 

@@ -14,25 +14,25 @@ const WIDTH_BREAKPOINT = 414
 const App = () => {
 
   const widthWindow =  window.screen.width
-  const isDesktop = (widthWindow > WIDTH_BREAKPOINT) ? true : false
+  const isDesktop = widthWindow > WIDTH_BREAKPOINT
 
   return (
     <Router>
       {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Tensor</Link>
-          </li>
-          <li>
-            <Link to="/students">Students</Link>
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <Link to="/">Tensor</Link>
+            </li>
+            <li>
+              <Link to="/students">Students</Link>
+            </li>
+          </ul>
       </nav> */}
       <Routes>
         <Route path='/students' element={ isDesktop ? <StudentsList/> : <StudentsListMobile/>} />
 
         <Route path='/' element={ isDesktop ? <StartPage/> : <StartPageMobile/>} />
-      </Routes>
+      </Routes>   
     </Router>
     );
 }
