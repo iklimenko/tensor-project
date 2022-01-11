@@ -9,18 +9,18 @@
       "mail": "exampl@mail.ru",
       "phone": "89001002030",
       "description": "Good student",
-      "avatar": ""
+      "avatar": "https://manrule.ru/images/article/orig/2019/12/kvadratnye-i-pryamougolnye-muzhskie-ochki-osobennosti-modeli-pravila-vybora-25.jpg"
     },
     {
       "id": 2,
       "name": "Анна Волкова",
       "university": "СибГУТИ",
-      "course": 2,
+      "course": "3",
       "city": "Новосибирск",
       "mail": "exampl@mail.ru",
       "phone": "89001002030",
       "description": "Good student",
-      "avatar": ""
+      "avatar": "https://proza.ru/pics/2020/06/19/791.jpg"
     },
     {
       "id": 3,
@@ -31,18 +31,18 @@
       "mail": "exampl@mail.ru",
       "phone": "89001002030",
       "description": "Good student",
-      "avatar": ""
+      "avatar": "https://i11.fotocdn.net/s128/ca3fb236969e7c1f/user_l/2912098956.jpg"
     },
     {
       "name": "Андрей",
       "city": "Москва",
       "university": "МГУ",
-      "course": "3",
+      "course": "4",
       "mail": "exam@mail.ru",
       "phone": "89109775512",
       "description": "Спортсмен",
       "id": 4,
-      "avatar": ""
+      "avatar": "https://i01.fotocdn.net/s115/8ff7740a5ada1ebe/user_l/2611558906.jpg"
     }
   ]
 }

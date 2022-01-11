@@ -30,7 +30,7 @@ const StudentsList = () => {
     const newList = [...list]
     const position = newList.findIndex(item => student.id === item.id)
     const res = await updateStudentsListAPI(student)
-    newList.splice(position, 1, res[0])
+    newList.splice(position, 1, res[0] || res)
     setList(newList)
     setLoader(false)
   }
