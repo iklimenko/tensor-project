@@ -34,5 +34,4 @@ def execute_query(query: str, *args) -> List[dict]:
         res = None
     finally:
         con.close()
-        print(res)
     return res

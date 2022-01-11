@@ -108,22 +108,6 @@ def create(payload: Student):
         payload.description or ""
     )
 
-    # returned_sql = """
-    #     select
-    #         id,
-    #         name,
-    #         university,
-    #         city,
-    #         course,
-    #         avatar,
-    #         phone,
-    #         mail,
-    #         description
-    #     from students
-    #     order by id desc limit 1 
-    # """
-    # return db_helper.execute_query(returned_sql)
-
 @app.delete("/students/{id}")
 def delete(id: int):
     sql = """
