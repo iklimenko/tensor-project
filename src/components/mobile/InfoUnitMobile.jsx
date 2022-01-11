@@ -1,4 +1,4 @@
-import { Input, InfoCell } from '../styled/PopupMobileStyles';
+import { Input, InfoCell } from '../../styled/mobile/PopupMobileStyles';
 
 
 const InfoUnitMobile = (props) => {

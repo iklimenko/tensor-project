@@ -1,6 +1,6 @@
-import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../styled/ListStyles';
+import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../../styled/desktop/ListStyles';
 
-import deleteicon from '../images/deleteicon.jpg'
+import deleteicon from '../../images/deleteicon.jpg'
 
 const Student = (props) => {
 

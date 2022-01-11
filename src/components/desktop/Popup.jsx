@@ -1,4 +1,4 @@
-import { BackgroundContainer, MainContainer } from '../styled/PopupStyles';
+import { BackgroundContainer, MainContainer } from '../../styled/desktop/PopupStyles';
 import PopupContent from './PopupContent';
 
 const Popup = (props) => {

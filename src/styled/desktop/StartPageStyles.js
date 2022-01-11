@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
 `
 
 export const TextLogo = styled.div`
-    font-family: TensorFont;
+    font-family: 'Catamaran', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 36px;
@@ -27,6 +27,7 @@ export const Container = styled.div`
 export const LogoContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
     width: 565px;
@@ -53,8 +54,8 @@ export const Paragraph = styled.div`
     text-align: center;
     font-size: 18px;
     font-style: normal;
-    font-weight: normal;
     line-height: 23px;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     margin: 0px 10px;
 `

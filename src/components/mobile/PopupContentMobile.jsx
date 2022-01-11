@@ -1,12 +1,12 @@
-import { InfoContainer, Input,  CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer, Container, NameContainer, TextArea, CancelIcon } from '../styled/PopupMobileStyles';
+import { InfoContainer, Input,  CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer, Container, NameContainer, TextArea, CancelIcon } from '../../styled/mobile/PopupMobileStyles';
 import { useState } from 'react';
 import InfoUnitMobile from './InfoUnitMobile'
 
-import cancel from './../images/cancel.png'
-import phone from './../images/phone.png'
-import city from './../images/city.png'
-import mail from './../images/mail.png'
-import university from './../images/university.png'
+import cancel from '../../images/cancel.png'
+import phone from '../../images/phone.png'
+import city from '../../images/city.png'
+import mail from '../../images/mail.png'
+import university from '../../images/university.png'
 
 
 const PopupContentMobile = (props) => {
@@ -57,8 +57,10 @@ const PopupContentMobile = (props) => {
                                 <div 
                                     style={{ 
                                         display: 'flex', 
-                                        justifyContent: 'space-between', 
-                                        width: '175px'
+                                        justifyContent: 'space-around', 
+                                        width: '175px',
+                                        flexDirection: 'row',
+                                        alignItems: 'center'
                                     }}>
                                         <Input 
                                             style={{
@@ -71,12 +73,18 @@ const PopupContentMobile = (props) => {
                                     <Input 
                                         placeholder='Курс'
                                         style={{
-                                            width: '80px'
+                                            width: '50px'
                                         }}
                                         type="number" 
                                         defaultValue={`${curStudent.course}`}
                                         onChange={e => { setCurStudent({...curStudent, course: e.target.value})} }
                                     />
+                                    <p style={{
+                                        fontFamily: 'Nunito',
+                                        fontWeight: 'bold',
+                                        fontSize: '12px',
+                                        color: '#7A91B5'
+                                    }}>курс</p>
                                 </div>
                             )}
                         </InfoCell>
@@ -136,26 +144,36 @@ const PopupContentMobile = (props) => {
                     </ButtonContainer>
                 </CardContainer>
                 <Avatar>
-                    <img 
-                        style={{borderRadius: '7px'}}
-                        height="104px" 
-                        width="104px" 
-                        src={curStudent.avatar} 
-                        alt="Аватар"
-                    />
+                    {!props.isNew ? (
+                        <img 
+                            style={{borderRadius: '7px'}}
+                            height="104px" 
+                            width="104px" 
+                            src={curStudent.avatar} 
+                            alt="Аватар"
+                        />
+                    ) : (
+                        <div 
+                            style={{ 
+                                height: "102px", 
+                                width: "102px",  
+                                borderRadius: '7px', 
+                                border: '1px solid black' 
+                            }} 
+                        />
+                    )}
                     <Input  
                         placeholder='URL аватара'
                         type="text"
                         style={{
                             margin: 0,
-                            height: 13,
+                            height: 14,
                             width: 104,
                             fontSize: 11, 
-                            borderRadius: 3
+                            borderRadius: 6
                         }}
                     />
                 </Avatar>
-                
             </InfoContainer>
         </Container>
     );

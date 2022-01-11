@@ -1,4 +1,4 @@
-import { Input, Label, InfoCell } from '../styled/PopupStyles';
+import { Input, Label, InfoCell } from '../../styled/desktop/PopupStyles';
 
 const InfoUnit = (props) => {
 

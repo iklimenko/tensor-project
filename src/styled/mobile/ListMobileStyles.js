@@ -112,7 +112,7 @@ export const StudInfoContainer = styled.div`
     width: 217px;
 `
 export const PrimaryInfo = styled.div`
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
@@ -129,25 +129,27 @@ export const SecondaryInfo = styled.div`
 export const University = styled.div`
     height: 17px;
     width: 120px;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 12px;
     line-height: 14px;
-    color: #7A91B5;
+    color: #5465ff;
 `
 
 export const City = styled.div`
     height: 17px;
     width: 110px;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 12px;
     line-height: 14px;
-    color: #7A91B5;
+    color: #5465ff;
 `
 export const AddingUser = styled.div`
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,6 +179,8 @@ export const Text = styled.div`
     width: 286px;
     display: flex;
     justify-content: flex-start;
+    font-family: 'Catamaran', sans-serif;
+    letter-spacing: 1px;
 `
 export const LoaderContainer = styled.div`
     height: 550px;

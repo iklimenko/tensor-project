@@ -1,4 +1,4 @@
-import { BackgroundContainer, MainContainer } from '../styled/PopupMobileStyles';
+import { BackgroundContainer, MainContainer } from '../../styled/mobile/PopupMobileStyles';
 import PopupContentMobile from './PopupContentMobile';
 
 

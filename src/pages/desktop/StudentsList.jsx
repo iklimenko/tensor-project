@@ -1,12 +1,12 @@
-import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser, LoaderContainer } from '../styled/ListStyles';
+import { Container, LogoContainer, MainContainer, TextLogo, LogoNameContainer, Logo, AddingUser, LoaderContainer } from '../../styled/desktop/ListStyles';
 import { useState, useEffect } from 'react';
-import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
+import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../../API/StudentsListAPI';
 
-import Popup from '../components/Popup'
+import Popup from '../../components/desktop/Popup'
 import Student from './Student'
 
-import logo from './../images/logo.png'
-import Loader from '../components/Loader';
+import logo from '../../images/logo.png'
+import Loader from '../../components/Loader';
 
 const StudentsList = () => {
 
@@ -37,12 +37,6 @@ const StudentsList = () => {
 
   const addStudent = async (student) => {
     setLoader(true)
-    // student.avatar = 'qwer'
-    // console.log(student)
-    // const newList = [...list]
-    // const res = await addStudentApi(student)
-    // console.log(res[0])
-    // newList.push(res[0])
     await addStudentApi(student)
     loadStudentList()
     setLoader(false)

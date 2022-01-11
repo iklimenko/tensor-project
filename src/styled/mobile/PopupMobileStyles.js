@@ -36,14 +36,14 @@ export const Input = styled.input`
     background-color: #eee;
     height: 14px;
     width: 170px;
-    font-family: SF UI Display;
     font-style: normal;
-    font-weight: normal;
     font-size: 12px;
     line-height: 14px;
     color: #7A91B5;
     border: 0px solid;
     border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
 `
 
 export const Label = styled.label`
@@ -51,6 +51,8 @@ export const Label = styled.label`
     width: 60px;
     font-size: 20px;
     margin: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
 `
 export const CardContainer = styled.div`
     height: 160px;
@@ -76,7 +78,7 @@ export const InfoCell = styled.div`
     justify-content: space-around;
 `
 export const Avatar = styled.div`
-    height: 130px;
+    height: 124px;
     width: 104px;
     display: flex;
     justify-content: space-between;
@@ -112,7 +114,7 @@ export const NameContainer = styled.div`
 `
 export const TextArea = styled.textarea`
     background-color: #eee;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;

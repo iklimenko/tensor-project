@@ -27,13 +27,17 @@ export const Input = styled.input`
     font-size: 18px;
     border: 0.2px solid;
     border-radius: 6px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
 `
 
 export const Label = styled.label`
+    font-family: 'Nunito', sans-serif;
     height: 30px;
     width: 60px;
     font-size: 20px;
     margin: 10px;
+    font-weight: bold;
 `
 export const CardContainer = styled.div`
     padding-top: 15px;
@@ -78,6 +82,8 @@ export const Button = styled.button`
     margin: 10px;
     height: 30px;
     width: 100px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
     &:hover {
         box-shadow: 0px 0px 15px 1px grey;
         backdrop-filter: brightness (100%);

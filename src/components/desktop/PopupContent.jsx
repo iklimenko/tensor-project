@@ -1,4 +1,4 @@
-import { InfoContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer } from '../styled/PopupStyles';
+import { InfoContainer, Input, Label, CardContainer, StudentInfo, InfoCell, Avatar, Button, ButtonContainer } from '../../styled/desktop/PopupStyles';
 import { useState } from 'react';
 
 import InfoUnit from './InfoUnit'
@@ -32,7 +32,7 @@ const PopupContent = (props) => {
                     <Input
                         placeholder="URL аватара"
                         type="text"
-                        style={{fontSize: 11.5, borderRadius: 3, height: '14px'}}
+                        style={{fontSize: 11.5, borderRadius: 3, height: '16px', width: '158px'}}
                         onChange={e => { 
                             setCurStudent({...curStudent, avatar: e.target.value}) 
                         }}

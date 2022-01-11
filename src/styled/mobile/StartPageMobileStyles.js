@@ -28,7 +28,7 @@ export const TextLogo = styled.div`
     width: 250px;
     display: flex;
     justify-content: center;
-    font-family: TensorFont;
+    font-family: 'Catamaran', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -49,9 +49,9 @@ export const Paragraph = styled.div`
     align-items: center;
     height: 74px;
     width: 100%;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     line-height: 18px;
     text-align: center;

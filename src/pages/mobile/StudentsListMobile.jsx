@@ -1,12 +1,13 @@
-import { MainContainer, AddingUser, Header, HeaderUp, HeaderDown, Text, LoaderContainer } from '../styled/ListMobileStyles';
+import { MainContainer, AddingUser, Header, HeaderUp, HeaderDown, Text, LoaderContainer } from '../../styled/mobile/ListMobileStyles';
 import { useState, useEffect } from 'react';
-import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../API/StudentsListAPI';
-import Loader from '../components/Loader';
+import { getStudentsListAPI, updateStudentsListAPI, deleteStudentApi, addStudentApi } from '../../API/StudentsListAPI';
+import Loader from '../../components/Loader';
+import { Link } from "react-router-dom";
 
-import Popup from '../components/PopupMobile'
+import Popup from '../../components/mobile/PopupMobile'
 import Student from './StudentMobile'
 
-import arrow from './../images/Vector.png'
+import arrow from './../../images/Vector.png'
 
 const StudentsList = () => {
 
@@ -37,12 +38,6 @@ const StudentsList = () => {
 
   const addStudent = async (student) => {
     setLoader(true)
-    // student.avatar = 'qwer'
-    // console.log(student)
-    // const newList = [...list]
-    // const res = await addStudentApi(student)
-    // console.log(res[0])
-    // newList.push(res[0])
     await addStudentApi(student)
     loadStudentList()
     setLoader(false)
@@ -72,12 +67,14 @@ const StudentsList = () => {
           <HeaderUp />
           <HeaderDown>
               <span>
+              <Link to='/'>
                 <img 
                   height="16px" 
                   width="16px" 
                   src={arrow} 
-                  alt="Логотип тензора"
+                  alt="Назад"
                 />
+              </Link>
               </span>
               <Text>Мои одноклассники</Text>
           </HeaderDown>

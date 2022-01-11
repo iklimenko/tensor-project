@@ -1,7 +1,7 @@
-import { Container, InfoContainer, LogoContainer, MainContainer, Paragraph, TextLogo, TextContainer } from '../styled/StartPageMobileStyles';
+import { Container, InfoContainer, LogoContainer, MainContainer, Paragraph, TextLogo, TextContainer } from '../../styled/mobile/StartPageMobileStyles';
 
-import logo from './../images/logo.png'
-import image from './../images/image.png'
+import logo from '../../images/logo.png'
+import image from '../../images/image.png'
 
 const TEXT = "Это страница школы Тензор. Тут вы можете познакомиться с нашими учениками и посмотреть темы занятий.";
 

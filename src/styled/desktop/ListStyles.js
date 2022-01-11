@@ -8,12 +8,14 @@ export const MainContainer = styled.div`
 `
 
 export const TextLogo = styled.div`
-    font-family: TensorFont;
+    height: 27px;
+    width: 180px;
+    letter-spacing: -1px;
+    font-family: 'Catamaran', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 25px;
     line-height: 31px;
-    margin: 0px 12px;
 `
 
 export const Container = styled.div`
@@ -31,21 +33,23 @@ export const LogoContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* padding: 64px 10px 80px; */
     width: 800px;
     height: 185px;
 `
 export const LogoNameContainer = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     padding: 0px;
-    width: 300px;
+    width: 233px;
     height: 41px;
-    margin: 10px 0px 10px 10px;
+    margin: 10px 0px;
 `
 export const Logo = styled.div`
-    margin: 0px 12px;
+    height: 41px;
+    width: 41px;
+    margin: 0px 6px 0px 6px;
 `
 
 export const InfoContainer = styled.div`
@@ -92,11 +96,11 @@ export const StudInfoContainer = styled.div`
     width: 250px;
 `
 export const PrimaryInfo = styled.div`
-    font-family: SF UI Display;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 29px;
+    font-family: 'Nunito', sans-serif;
 `
 export const SecondaryInfo = styled.div`
     display: flex;
@@ -107,25 +111,27 @@ export const SecondaryInfo = styled.div`
 export const University = styled.div`
     height: 17px;
     width: 120px;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     line-height: 17px;
-    color: #7A91B5;
+    color: #5465ff;
 `
 
 export const City = styled.div`
     height: 17px;
     width: 110px;
-    font-family: SF UI Display;
+    font-family: 'Nunito', sans-serif;;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     line-height: 17px;
-    color: #7A91B5;
+    color: #5465ff;
 `
 export const AddingUser = styled.div`
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;

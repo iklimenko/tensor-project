@@ -1,6 +1,6 @@
-import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../styled/ListMobileStyles';
+import { Avatar, StudentContainer, StudInfoContainer, PrimaryInfo, SecondaryInfo, University, City, DeleteIcon } from '../../styled/mobile/ListMobileStyles';
 
-import deleteicon from '../images/deleteicon.jpg'
+import deleteicon from '../../images/deleteicon.jpg'
 
 const StudentMobile = (props) => {
 
