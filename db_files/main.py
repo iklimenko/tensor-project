@@ -94,7 +94,7 @@ def update(id: int, payload: Student):
 def create(payload: Student):
     sql = """
         insert into students (name, university, city, course, avatar, phone, mail, description)
-        values (%s::text, %s::text, %s::text, %d::int, %s::text, %s::text, %s::text, %s::text)
+        values (%s::text, %s::text, %s::text, %s::int, %s::text, %s::text, %s::text, %s::text)
     """  
     db_helper.execute_query(
         sql,
