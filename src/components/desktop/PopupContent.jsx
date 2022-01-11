@@ -32,7 +32,12 @@ const PopupContent = (props) => {
                     <Input
                         placeholder="URL аватара"
                         type="text"
-                        style={{fontSize: 11.5, borderRadius: 3, height: '16px', width: '158px'}}
+                        style={{
+                            fontSize: 11.5, 
+                            borderRadius: 3, 
+                            height: '16px', 
+                            width: '158px'
+                        }}
                         onChange={e => { 
                             setCurStudent({...curStudent, avatar: e.target.value}) 
                         }}

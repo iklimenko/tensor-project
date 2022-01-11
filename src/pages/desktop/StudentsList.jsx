@@ -70,7 +70,14 @@ const StudentsList = () => {
         <MainContainer>
           <LogoContainer>
               <LogoNameContainer>
-                <Logo><img height="41px" width="41px" src={logo} alt="Логотип тензора"></img></Logo>
+                <Logo>
+                  <img 
+                    height="41px" 
+                    width="41px" 
+                    src={logo} 
+                    alt="Логотип тензора" 
+                  />
+                </Logo>
                 <TextLogo>TENSOR SCHOOL</TextLogo>
               </LogoNameContainer>
           </LogoContainer>

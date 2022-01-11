@@ -52,7 +52,7 @@ const PopupContentMobile = (props) => {
                                     type="text" 
                                     defaultValue={curStudent.university}
                                     onChange={e => { setCurStudent({...curStudent, university: e.target.value})} }
-                            />
+                                />
                             ) : (
                                 <div 
                                     style={{ 

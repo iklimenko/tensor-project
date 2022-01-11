@@ -7,22 +7,31 @@ const TEXT = "Это страница школы Тензор. Тут вы мо�
 
 const StartPage = () => {
 
-  return (
-  
-  <MainContainer>
-    <Container>
-      <LogoContainer>
-        <img height="42px" width="42px" style={ {margin: '16px 0px'}} src={logo} alt="Логотип тензора"></img>
-        <TextLogo>TENSOR SCHOOL</TextLogo>
-      </LogoContainer>
-      <InfoContainer>
-          <img height="178px" width="209px" src={image} alt="Титульное изображение"></img>
-        <Paragraph><TextContainer>{TEXT}</TextContainer></Paragraph>
-      </InfoContainer>
-    </Container>
-  </MainContainer>
-  
-  );
+    return (
+        <MainContainer>
+            <Container>
+                <LogoContainer>
+                    <img 
+                      height="42px" 
+                      width="42px" 
+                      style={{margin: '16px 0px'}} 
+                      src={logo} 
+                      alt="Логотип тензора" 
+                    />
+                    <TextLogo>TENSOR SCHOOL</TextLogo>
+                </LogoContainer>
+                <InfoContainer>
+                    <img
+                      height="178px" 
+                      width="209px" 
+                      src={image} 
+                      alt="Титульное изображение" 
+                    />
+                    <Paragraph><TextContainer>{TEXT}</TextContainer></Paragraph>
+                </InfoContainer>
+            </Container>
+        </MainContainer>
+    )
 }
 
 export default StartPage;
